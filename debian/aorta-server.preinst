@@ -16,7 +16,7 @@ set -e
 
 case "$1" in
     install)
-        service qpidd stop
+        service qpidd stop 2>/dev/null || echo "qpidd not running"
         update-rc.d -f qpidd remove
     ;;
 
