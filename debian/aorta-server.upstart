@@ -1,0 +1,15 @@
+description "aorta-server"
+author "Cochise Ruhulessin"
+
+start on (net-device-up and local-filesystems and runlevel [2345])
+stop on runlevel [016]
+respawn
+
+
+setuid aorta
+setgid aorta
+chdir /var/lib/aorta
+
+exec /usr/sbin/qpidd --config /etc/aorta/aorta-qpid.conf\
+    --load-module /usr/lib/x86_64-linux-gnu/qpid/daemon/linearstore.so\
+    --data-dir /var/lib/aorta

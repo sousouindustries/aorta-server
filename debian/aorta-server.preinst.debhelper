@@ -1,0 +1,9 @@
+# Automatically added by dh_installinit
+if [ "$1" = install ] || [ "$1" = upgrade ]; then
+	if [ -e "/etc/init.d/aorta-server" ] && [ -L "/etc/init.d/aorta-server" ] \
+	   && [ $(readlink -f "/etc/init.d/aorta-server") = /lib/init/upstart-job ]
+	then
+		rm -f "/etc/init.d/aorta-server"
+	fi
+fi
+# End automatically added section
