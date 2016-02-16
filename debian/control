@@ -12,7 +12,8 @@ Architecture: any
 Depends:
     qpidd (>= 0.32),
     qpid-tools (>= 0.32),
-    qpidd-linear-store
+    qpidd-linear-store,
+    sasl2-bin
 Description: Aorta Message Broker
  The Aorta message broker functions as the message bus for the
  Sovereign system.
